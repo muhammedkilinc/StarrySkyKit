@@ -13,11 +13,17 @@ public class StarrySky {
     // Singleton instance
     public static let shared = StarrySky()
 
+    private let persistenceManager = PersistenceManager(storage: UserDefaults.standard,
+                                                encoder: JSONEncoder(),
+                                                decoder: JSONDecoder(),
+                                                key: Constants.starsKey)
+
+    private let lifecycleManager = AppLifecycleManager()
+
     // The main view of the framework
     private lazy var starView: StarView = {
-        let view = StarView(skyManager: SkyManager())
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+        StarView(skyManager: SkyManager(persistenceManager: persistenceManager,
+                                        lifecycleManager: lifecycleManager))
     }()
 
     // Private initializer to ensure only one instance is created

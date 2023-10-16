@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol AppLifecycleManaging {
+    var didEnterBackground: (() -> Void)? { get set }
+    var willTerminate: (() -> Void)? { get set }
+}
+
 final class AppLifecycleManager {
 
     var didEnterBackground: (() -> Void)?
@@ -36,3 +41,5 @@ final class AppLifecycleManager {
         willTerminate?()
     }
 }
+
+extension AppLifecycleManager: AppLifecycleManaging {}

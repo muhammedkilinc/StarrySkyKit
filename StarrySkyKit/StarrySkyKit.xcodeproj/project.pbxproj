@@ -20,6 +20,7 @@
 		A4A3B1BE2ADDE889006CE226 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A3B1BD2ADDE889006CE226 /* UIViewExtension.swift */; };
 		A4A3B1C02ADDEC42006CE226 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A3B1BF2ADDEC42006CE226 /* PersistenceManager.swift */; };
 		A4A3B1C22ADDEDC5006CE226 /* AppLifecycleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A3B1C12ADDEDC5006CE226 /* AppLifecycleManager.swift */; };
+		A4A3B1C62ADDEFB5006CE226 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A3B1C52ADDEFB5006CE226 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A4A3B1BD2ADDE889006CE226 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		A4A3B1BF2ADDEC42006CE226 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		A4A3B1C12ADDEDC5006CE226 /* AppLifecycleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLifecycleManager.swift; sourceTree = "<group>"; };
+		A4A3B1C52ADDEFB5006CE226 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				A49B183C2ADDD636000103B2 /* StarrySkyKit.h */,
 				A49B18532ADDD652000103B2 /* StarrySky.swift */,
+				A4A3B1C52ADDEFB5006CE226 /* Constants.swift */,
 				A4A3B1B72ADDE18C006CE226 /* Extension */,
 				A49B185A2ADDD74C000103B2 /* Model */,
 				A49B18552ADDD6B4000103B2 /* View */,
@@ -246,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A49B18572ADDD6C1000103B2 /* StarView.swift in Sources */,
+				A4A3B1C62ADDEFB5006CE226 /* Constants.swift in Sources */,
 				A49B18542ADDD652000103B2 /* StarrySky.swift in Sources */,
 				A4A3B1C22ADDEDC5006CE226 /* AppLifecycleManager.swift in Sources */,
 				A49B185C2ADDD99D000103B2 /* SkyManager.swift in Sources */,

@@ -16,10 +16,41 @@ protocol SkyManaging {
 final class SkyManager {
     private var stars: [Star] = []
 
+    private let persistenceManager: PersistenceManaging
+    private var lifecycleManager: AppLifecycleManaging
+    
+    init(persistenceManager: PersistenceManaging,
+         lifecycleManager: AppLifecycleManaging) {
+        self.persistenceManager = persistenceManager
+        self.lifecycleManager = lifecycleManager
+
+        setupLifecycleHooks()
+        retriveStarsIfExist()
+    }
+
+    private func retriveStarsIfExist() {
+        if let storedStars: [Star] = persistenceManager.load() {
+            self.stars = storedStars
+        }
+    }
+
     private func printStars() {
         print(stars)
         let brightStars = stars.filter { $0.brightness == .bright }.count
         print("Number of Bright stars: \(brightStars)")
+    }
+
+    private func setupLifecycleHooks() {
+        lifecycleManager.didEnterBackground = { [weak self] in
+            self?.saveStars()
+        }
+        lifecycleManager.willTerminate = { [weak self] in
+            self?.saveStars()
+        }
+    }
+
+    private func saveStars() {
+        persistenceManager.save(stars)
     }
 }
 
