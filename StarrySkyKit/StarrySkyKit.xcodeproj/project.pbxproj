@@ -12,6 +12,11 @@
 		A49B18492ADDD636000103B2 /* StarrySkyKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B18482ADDD636000103B2 /* StarrySkyKitTests.swift */; };
 		A49B184A2ADDD636000103B2 /* StarrySkyKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A49B183C2ADDD636000103B2 /* StarrySkyKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A49B18542ADDD652000103B2 /* StarrySky.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B18532ADDD652000103B2 /* StarrySky.swift */; };
+		A49B18572ADDD6C1000103B2 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B18562ADDD6C1000103B2 /* StarView.swift */; };
+		A49B18592ADDD729000103B2 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B18582ADDD729000103B2 /* Star.swift */; };
+		A49B185C2ADDD99D000103B2 /* SkyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B185B2ADDD99D000103B2 /* SkyManager.swift */; };
+		A4A3B1B62ADDDD99006CE226 /* StarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A3B1B52ADDDD99006CE226 /* StarButtonView.swift */; };
+		A4A3B1B92ADDE199006CE226 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A3B1B82ADDE199006CE226 /* UIApplicationExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +36,11 @@
 		A49B18432ADDD636000103B2 /* StarrySkyKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarrySkyKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A49B18482ADDD636000103B2 /* StarrySkyKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarrySkyKitTests.swift; sourceTree = "<group>"; };
 		A49B18532ADDD652000103B2 /* StarrySky.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarrySky.swift; sourceTree = "<group>"; };
+		A49B18562ADDD6C1000103B2 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
+		A49B18582ADDD729000103B2 /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
+		A49B185B2ADDD99D000103B2 /* SkyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyManager.swift; sourceTree = "<group>"; };
+		A4A3B1B52ADDDD99006CE226 /* StarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarButtonView.swift; sourceTree = "<group>"; };
+		A4A3B1B82ADDE199006CE226 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +85,9 @@
 			children = (
 				A49B183C2ADDD636000103B2 /* StarrySkyKit.h */,
 				A49B18532ADDD652000103B2 /* StarrySky.swift */,
+				A4A3B1B72ADDE18C006CE226 /* Extension */,
+				A49B185A2ADDD74C000103B2 /* Model */,
+				A49B18552ADDD6B4000103B2 /* View */,
 				A49B183D2ADDD636000103B2 /* StarrySkyKit.docc */,
 			);
 			path = StarrySkyKit;
@@ -86,6 +99,32 @@
 				A49B18482ADDD636000103B2 /* StarrySkyKitTests.swift */,
 			);
 			path = StarrySkyKitTests;
+			sourceTree = "<group>";
+		};
+		A49B18552ADDD6B4000103B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A49B18562ADDD6C1000103B2 /* StarView.swift */,
+				A4A3B1B52ADDDD99006CE226 /* StarButtonView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A49B185A2ADDD74C000103B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A49B18582ADDD729000103B2 /* Star.swift */,
+				A49B185B2ADDD99D000103B2 /* SkyManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A4A3B1B72ADDE18C006CE226 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A4A3B1B82ADDE199006CE226 /* UIApplicationExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +236,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A49B18572ADDD6C1000103B2 /* StarView.swift in Sources */,
 				A49B18542ADDD652000103B2 /* StarrySky.swift in Sources */,
+				A49B185C2ADDD99D000103B2 /* SkyManager.swift in Sources */,
 				A49B183E2ADDD636000103B2 /* StarrySkyKit.docc in Sources */,
+				A4A3B1B62ADDDD99006CE226 /* StarButtonView.swift in Sources */,
+				A4A3B1B92ADDE199006CE226 /* UIApplicationExtension.swift in Sources */,
+				A49B18592ADDD729000103B2 /* Star.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
