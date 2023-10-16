@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A49B183E2ADDD636000103B2 /* StarrySkyKit.docc in Sources */ = {isa = PBXBuildFile; fileRef = A49B183D2ADDD636000103B2 /* StarrySkyKit.docc */; };
 		A49B18442ADDD636000103B2 /* StarrySkyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A49B18392ADDD636000103B2 /* StarrySkyKit.framework */; };
-		A49B18492ADDD636000103B2 /* StarrySkyKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B18482ADDD636000103B2 /* StarrySkyKitTests.swift */; };
 		A49B184A2ADDD636000103B2 /* StarrySkyKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A49B183C2ADDD636000103B2 /* StarrySkyKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A49B18542ADDD652000103B2 /* StarrySky.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B18532ADDD652000103B2 /* StarrySky.swift */; };
 		A49B18572ADDD6C1000103B2 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B18562ADDD6C1000103B2 /* StarView.swift */; };
@@ -21,6 +20,9 @@
 		A4A3B1C02ADDEC42006CE226 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A3B1BF2ADDEC42006CE226 /* PersistenceManager.swift */; };
 		A4A3B1C22ADDEDC5006CE226 /* AppLifecycleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A3B1C12ADDEDC5006CE226 /* AppLifecycleManager.swift */; };
 		A4A3B1C62ADDEFB5006CE226 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A3B1C52ADDEFB5006CE226 /* Constants.swift */; };
+		A4A3B1E92ADDFA5D006CE226 /* SkyManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A3B1E82ADDFA5D006CE226 /* SkyManagerTests.swift */; };
+		A4A3B1EC2ADDFA80006CE226 /* MockPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A3B1EB2ADDFA80006CE226 /* MockPersistenceManager.swift */; };
+		A4A3B1EE2ADDFA88006CE226 /* MockAppLifecycleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A3B1ED2ADDFA88006CE226 /* MockAppLifecycleManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,6 @@
 		A49B183C2ADDD636000103B2 /* StarrySkyKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarrySkyKit.h; sourceTree = "<group>"; };
 		A49B183D2ADDD636000103B2 /* StarrySkyKit.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = StarrySkyKit.docc; sourceTree = "<group>"; };
 		A49B18432ADDD636000103B2 /* StarrySkyKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarrySkyKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A49B18482ADDD636000103B2 /* StarrySkyKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarrySkyKitTests.swift; sourceTree = "<group>"; };
 		A49B18532ADDD652000103B2 /* StarrySky.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarrySky.swift; sourceTree = "<group>"; };
 		A49B18562ADDD6C1000103B2 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		A49B18582ADDD729000103B2 /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
@@ -49,6 +50,9 @@
 		A4A3B1BF2ADDEC42006CE226 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		A4A3B1C12ADDEDC5006CE226 /* AppLifecycleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLifecycleManager.swift; sourceTree = "<group>"; };
 		A4A3B1C52ADDEFB5006CE226 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A4A3B1E82ADDFA5D006CE226 /* SkyManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyManagerTests.swift; sourceTree = "<group>"; };
+		A4A3B1EB2ADDFA80006CE226 /* MockPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPersistenceManager.swift; sourceTree = "<group>"; };
+		A4A3B1ED2ADDFA88006CE226 /* MockAppLifecycleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppLifecycleManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +109,8 @@
 		A49B18472ADDD636000103B2 /* StarrySkyKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				A49B18482ADDD636000103B2 /* StarrySkyKitTests.swift */,
+				A4A3B1E82ADDFA5D006CE226 /* SkyManagerTests.swift */,
+				A4A3B1EA2ADDFA77006CE226 /* Mock */,
 			);
 			path = StarrySkyKitTests;
 			sourceTree = "<group>";
@@ -145,6 +150,15 @@
 				A4A3B1C52ADDEFB5006CE226 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		A4A3B1EA2ADDFA77006CE226 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				A4A3B1EB2ADDFA80006CE226 /* MockPersistenceManager.swift */,
+				A4A3B1ED2ADDFA88006CE226 /* MockAppLifecycleManager.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,7 +288,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A49B18492ADDD636000103B2 /* StarrySkyKitTests.swift in Sources */,
+				A4A3B1E92ADDFA5D006CE226 /* SkyManagerTests.swift in Sources */,
+				A4A3B1EE2ADDFA88006CE226 /* MockAppLifecycleManager.swift in Sources */,
+				A4A3B1EC2ADDFA80006CE226 /* MockPersistenceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
