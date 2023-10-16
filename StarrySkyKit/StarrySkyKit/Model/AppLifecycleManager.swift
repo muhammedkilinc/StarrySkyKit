@@ -29,7 +29,7 @@ final class AppLifecycleManager {
 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(handleAppWillTerminate),
-                                               name: UIApplication.willTerminateNotification,
+                                               name: UIApplication.didBecomeActiveNotification,
                                                object: nil)
     }
 

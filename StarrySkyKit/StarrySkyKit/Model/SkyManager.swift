@@ -18,11 +18,14 @@ final class SkyManager {
 
     private let persistenceManager: PersistenceManaging
     private var lifecycleManager: AppLifecycleManaging
-    
+    private let notificationManager: NotificationManaging
+
     init(persistenceManager: PersistenceManaging,
-         lifecycleManager: AppLifecycleManaging) {
+         lifecycleManager: AppLifecycleManaging,
+         notificationManager: NotificationManaging) {
         self.persistenceManager = persistenceManager
         self.lifecycleManager = lifecycleManager
+        self.notificationManager = notificationManager
 
         setupLifecycleHooks()
         retriveStarsIfExist()
@@ -44,10 +47,18 @@ final class SkyManager {
 
     private func setupLifecycleHooks() {
         lifecycleManager.didEnterBackground = { [weak self] in
-            self?.saveStars()
+            guard let self else {
+                return
+            }
+            self.saveStars()
+            self.notificationManager.scheduleStarsCountNotification(with: stars.count)
         }
+
         lifecycleManager.willTerminate = { [weak self] in
-            self?.saveStars()
+            guard let self else {
+                return
+            }
+            self.notificationManager.removeStarsCountNotification()
         }
     }
 

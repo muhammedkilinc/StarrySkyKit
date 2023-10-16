@@ -23,6 +23,7 @@
 		A4A3B1E92ADDFA5D006CE226 /* SkyManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A3B1E82ADDFA5D006CE226 /* SkyManagerTests.swift */; };
 		A4A3B1EC2ADDFA80006CE226 /* MockPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A3B1EB2ADDFA80006CE226 /* MockPersistenceManager.swift */; };
 		A4A3B1EE2ADDFA88006CE226 /* MockAppLifecycleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A3B1ED2ADDFA88006CE226 /* MockAppLifecycleManager.swift */; };
+		A4A3B1F02ADDFC46006CE226 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A3B1EF2ADDFC46006CE226 /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		A4A3B1E82ADDFA5D006CE226 /* SkyManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyManagerTests.swift; sourceTree = "<group>"; };
 		A4A3B1EB2ADDFA80006CE226 /* MockPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPersistenceManager.swift; sourceTree = "<group>"; };
 		A4A3B1ED2ADDFA88006CE226 /* MockAppLifecycleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppLifecycleManager.swift; sourceTree = "<group>"; };
+		A4A3B1EF2ADDFC46006CE226 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				A49B183C2ADDD636000103B2 /* StarrySkyKit.h */,
 				A49B18532ADDD652000103B2 /* StarrySky.swift */,
+				A4A3B1F12ADDFC4E006CE226 /* Manager */,
 				A4A3B1C72ADDF1C7006CE226 /* Constants */,
 				A4A3B1B72ADDE18C006CE226 /* Extension */,
 				A49B185A2ADDD74C000103B2 /* Model */,
@@ -159,6 +162,14 @@
 				A4A3B1ED2ADDFA88006CE226 /* MockAppLifecycleManager.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		A4A3B1F12ADDFC4E006CE226 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				A4A3B1EF2ADDFC46006CE226 /* NotificationManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +287,7 @@
 				A4A3B1C22ADDEDC5006CE226 /* AppLifecycleManager.swift in Sources */,
 				A49B185C2ADDD99D000103B2 /* SkyManager.swift in Sources */,
 				A49B183E2ADDD636000103B2 /* StarrySkyKit.docc in Sources */,
+				A4A3B1F02ADDFC46006CE226 /* NotificationManager.swift in Sources */,
 				A4A3B1B62ADDDD99006CE226 /* StarButtonView.swift in Sources */,
 				A4A3B1BE2ADDE889006CE226 /* UIViewExtension.swift in Sources */,
 				A4A3B1C02ADDEC42006CE226 /* PersistenceManager.swift in Sources */,

@@ -13,25 +13,32 @@ public class StarrySky {
     // Singleton instance
     public static let shared = StarrySky()
 
-    private let persistenceManager = PersistenceManager(storage: UserDefaults.standard,
-                                                encoder: JSONEncoder(),
-                                                decoder: JSONDecoder(),
-                                                key: Constants.starsKey)
+    private let persistenceManager: PersistenceManaging
+    private let lifecycleManager: AppLifecycleManaging
+    private let notificationManager: NotificationManaging
 
-    private let lifecycleManager = AppLifecycleManager()
-
-    // The main view of the framework
     private lazy var starView: StarView = {
         StarView(skyManager: SkyManager(persistenceManager: persistenceManager,
-                                        lifecycleManager: lifecycleManager))
+                                        lifecycleManager: lifecycleManager,
+                                        notificationManager: notificationManager))
     }()
 
-    // Private initializer to ensure only one instance is created
-    private init() {}
+    private init() {
+        self.persistenceManager = PersistenceManager(storage: UserDefaults.standard,
+                                                       encoder: JSONEncoder(),
+                                                       decoder: JSONDecoder(),
+                                                       key: Constants.starsKey)
+        self.lifecycleManager = AppLifecycleManager()
 
-    // Public method to add the StarView
+        self.notificationManager = NotificationManager(notificationCenter: UNUserNotificationCenter.current())
+    }
+
     public func addStarInterface(to parentView: UIView) {
         parentView.addSubview(starView)
         starView.anchorToSuperview()
+    }
+
+    public func requestNotificationPermission() {
+        notificationManager.requestNotificationPermission()
     }
 }
