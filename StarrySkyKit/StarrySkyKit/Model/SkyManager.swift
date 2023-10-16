@@ -35,7 +35,9 @@ final class SkyManager {
     }
 
     private func printStars() {
-        print(stars)
+        stars.forEach { item in
+            print(item)
+        }
         let brightStars = stars.filter { $0.brightness == .bright }.count
         print("Number of Bright stars: \(brightStars)")
     }

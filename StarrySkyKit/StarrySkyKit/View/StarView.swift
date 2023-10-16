@@ -22,7 +22,9 @@ final class StarView: UIView {
     }
 
     private lazy var webView: WKWebView = {
-        WKWebView()
+        let webView = WKWebView()
+        webView.backgroundColor = .gray
+        return webView
     }()
 
     private lazy var starButtonView: StarButtonView = {
@@ -47,8 +49,12 @@ final class StarView: UIView {
     }
 
     private func setupConstraints() {
-        mainStackView.anchorToSuperview()
-        starButtonView.setSize(height: 200)
+        let insets = UIEdgeInsets(top: 80,
+                                  left: 20,
+                                  bottom: 80,
+                                  right: 20)
+        mainStackView.anchorToSuperview(with: insets)
+        starButtonView.setSize(height: 100)
     }
 
     private func loadWebContent() {
