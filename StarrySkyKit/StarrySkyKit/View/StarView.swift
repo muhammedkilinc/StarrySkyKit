@@ -22,15 +22,11 @@ final class StarView: UIView {
     }
 
     private lazy var webView: WKWebView = {
-        let webView = WKWebView()
-        webView.translatesAutoresizingMaskIntoConstraints = false
-        return webView
+        WKWebView()
     }()
 
     private lazy var starButtonView: StarButtonView = {
-        let view = StarButtonView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+        StarButtonView()
     }()
 
     private lazy var mainStackView: UIStackView = {
@@ -38,7 +34,6 @@ final class StarView: UIView {
         sv.axis = .vertical
         sv.distribution = .fill
         sv.spacing = 10
-        sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
     }()
 
@@ -52,14 +47,8 @@ final class StarView: UIView {
     }
 
     private func setupConstraints() {
-        NSLayoutConstraint.activate([
-            mainStackView.topAnchor.constraint(equalTo: topAnchor),
-            mainStackView.leftAnchor.constraint(equalTo: leftAnchor),
-            mainStackView.rightAnchor.constraint(equalTo: rightAnchor),
-            mainStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-
-            starButtonView.heightAnchor.constraint(equalToConstant: 200)
-        ])
+        mainStackView.anchorToSuperview()
+        starButtonView.setSize(height: 200)
     }
 
     private func loadWebContent() {

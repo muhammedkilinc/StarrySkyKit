@@ -41,7 +41,6 @@ final class StarButtonView: UIView {
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         stackView.spacing = 10
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
 
@@ -66,12 +65,12 @@ final class StarButtonView: UIView {
     }
 
     private func setupConstraints() {
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.horizontalPadding),
-            stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: Constants.horizontalPadding),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+        let stackViewInsets = UIEdgeInsets(top: .zero,
+                                           left: Constants.horizontalPadding,
+                                           bottom: .zero,
+                                           right: Constants.horizontalPadding)
+
+        stackView.anchorToSuperview(with: stackViewInsets)
     }
 
     @objc private func handleSmallStarButtonTap() {
