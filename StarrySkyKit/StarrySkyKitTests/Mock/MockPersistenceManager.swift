@@ -8,13 +8,13 @@
 @testable import StarrySkyKit
 
 class MockPersistenceManager: PersistenceManaging {
-    var savedData: [Star]?
+  var savedData: [Star]?
 
-    func save<T: Encodable>(_ object: T) {
-        savedData = object as? [Star]
-    }
+  func save(_ object: some Encodable) {
+    savedData = object as? [Star]
+  }
 
-    func load<T: Decodable>() -> T? {
-        return savedData as? T
-    }
+  func load<T: Decodable>() -> T? {
+    savedData as? T
+  }
 }

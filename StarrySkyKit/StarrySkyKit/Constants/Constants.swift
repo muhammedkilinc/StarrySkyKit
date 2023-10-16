@@ -8,5 +8,5 @@
 import Foundation
 
 enum Constants {
-    static let starsKey = "com.starrySky.stars"
+  static let starsKey = "com.starrySky.stars"
 }

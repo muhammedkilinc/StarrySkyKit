@@ -10,54 +10,55 @@ import XCTest
 
 class SkyManagerTests: XCTestCase {
 
-    var sut: SkyManager! // System Under Test
-    var mockPersistenceManager: MockPersistenceManager!
-    var mockAppLifecycleManager: MockAppLifecycleManager!
+  var sut: SkyManager! // System Under Test
+  var mockPersistenceManager: MockPersistenceManager!
+  var mockAppLifecycleManager: MockAppLifecycleManager!
 
-    override func setUp() {
-        super.setUp()
-        mockPersistenceManager = MockPersistenceManager()
-        mockAppLifecycleManager = MockAppLifecycleManager()
-        sut = SkyManager(persistenceManager: mockPersistenceManager,
-                         lifecycleManager: mockAppLifecycleManager)
+  override func setUp() {
+    super.setUp()
+    mockPersistenceManager = MockPersistenceManager()
+    mockAppLifecycleManager = MockAppLifecycleManager()
+    sut = SkyManager(
+      persistenceManager: mockPersistenceManager,
+      lifecycleManager: mockAppLifecycleManager)
+  }
+
+  override func tearDown() {
+    mockPersistenceManager = nil
+    mockAppLifecycleManager = nil
+    sut = nil
+    super.tearDown()
+  }
+
+  func testAddingStarIncreasesCount() {
+    sut.addStar(size: .small)
+    XCTAssertFalse(sut.isSkyFull())
+  }
+
+  func testSkyIsFullWhenAddingMoreThanLimit() {
+    for _ in 1...11 {
+      sut.addStar(size: .small)
     }
+    XCTAssertTrue(sut.isSkyFull())
+  }
 
-    override func tearDown() {
-        mockPersistenceManager = nil
-        mockAppLifecycleManager = nil
-        sut = nil
-        super.tearDown()
-    }
+  func testResetStarsClearsAllStars() {
+    sut.addStar(size: .small)
+    sut.resetStars()
+    XCTAssertFalse(sut.isSkyFull())
+  }
 
-    func testAddingStarIncreasesCount() {
-        sut.addStar(size: .small)
-        XCTAssertFalse(sut.isSkyFull())
-    }
+  func testStarsArePersistedWhenAppGoesToBackground() {
+    sut.addStar(size: .small)
+    mockAppLifecycleManager.didEnterBackground?()
 
-    func testSkyIsFullWhenAddingMoreThanLimit() {
-        for _ in 1...11 {
-            sut.addStar(size: .small)
-        }
-        XCTAssertTrue(sut.isSkyFull())
-    }
+    XCTAssertEqual(mockPersistenceManager.savedData!.count, 1)
+  }
 
-    func testResetStarsClearsAllStars() {
-        sut.addStar(size: .small)
-        sut.resetStars()
-        XCTAssertFalse(sut.isSkyFull())
-    }
+  func testStarsArePersistedWhenAppWillTerminate() {
+    sut.addStar(size: .small)
+    mockAppLifecycleManager.willTerminate?()
 
-    func testStarsArePersistedWhenAppGoesToBackground() {
-        sut.addStar(size: .small)
-        mockAppLifecycleManager.didEnterBackground?()
-
-        XCTAssertEqual(mockPersistenceManager.savedData!.count, 1)
-    }
-
-    func testStarsArePersistedWhenAppWillTerminate() {
-        sut.addStar(size: .small)
-        mockAppLifecycleManager.willTerminate?()
-
-        XCTAssertEqual(mockPersistenceManager.savedData!.count, 1)
-    }
+    XCTAssertEqual(mockPersistenceManager.savedData!.count, 1)
+  }
 }

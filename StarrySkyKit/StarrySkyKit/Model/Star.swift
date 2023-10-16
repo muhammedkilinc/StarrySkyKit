@@ -7,55 +7,65 @@
 
 import Foundation
 
-enum StarColor: Codable, CaseIterable, CustomStringConvertible {
-    case red, blue, green
+// MARK: - StarColor
 
-    var description: String {
-        switch self {
-        case .red:
-            "Red"
-        case .blue:
-            "Blue"
-        case .green:
-            "Green"
-        }
+enum StarColor: Codable, CaseIterable, CustomStringConvertible {
+  case red, blue, green
+
+  var description: String {
+    switch self {
+    case .red:
+      "Red"
+    case .blue:
+      "Blue"
+    case .green:
+      "Green"
     }
+  }
 }
+
+// MARK: - StarBrightness
 
 enum StarBrightness: Codable, CaseIterable, CustomStringConvertible {
-    case bright, normal
+  case bright, normal
 
-    var description: String {
-        switch self {
-        case .bright:
-            "Bright"
-        case .normal:
-            "Not so much"
-        }
+  var description: String {
+    switch self {
+    case .bright:
+      "Bright"
+    case .normal:
+      "Not so much"
     }
+  }
 }
+
+// MARK: - StarSize
 
 enum StarSize: Codable, CustomStringConvertible {
-    case small, big
+  case small, big
 
-    var description: String {
-        switch self {
-        case .small:
-            "Small"
-        case .big:
-            "big"
-        }
+  var description: String {
+    switch self {
+    case .small:
+      "Small"
+    case .big:
+      "big"
     }
+  }
 }
+
+// MARK: - Star
 
 public struct Star: Codable {
-    let size: StarSize
-    let color: StarColor
-    let brightness: StarBrightness
+  let size: StarSize
+  let color: StarColor
+  let brightness: StarBrightness
 }
 
+// MARK: CustomStringConvertible
+
 extension Star: CustomStringConvertible {
-    public var description: String {
-        "size: \(size) - color: \(color) - bright: \(brightness)"
-    }
+  public var description: String {
+    "size: \(size) - color: \(color) - bright: \(brightness)"
+  }
 }

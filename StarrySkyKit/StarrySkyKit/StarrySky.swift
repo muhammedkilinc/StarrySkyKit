@@ -10,35 +10,42 @@ import UIKit
 
 public class StarrySky {
 
-    // Singleton instance
-    public static let shared = StarrySky()
+  // MARK: Lifecycle
 
-    private let persistenceManager: PersistenceManaging
-    private let lifecycleManager: AppLifecycleManaging
-    private let notificationManager: NotificationManaging
+  private init() {
+    persistenceManager = PersistenceManager(
+      storage: UserDefaults.standard,
+      encoder: JSONEncoder(),
+      decoder: JSONDecoder(),
+      key: Constants.starsKey)
+    lifecycleManager = AppLifecycleManager()
 
-    private lazy var starView: StarView = {
-        StarView(skyManager: SkyManager(persistenceManager: persistenceManager,
-                                        lifecycleManager: lifecycleManager,
-                                        notificationManager: notificationManager))
-    }()
+    notificationManager = NotificationManager(notificationCenter: UNUserNotificationCenter.current())
+  }
 
-    private init() {
-        self.persistenceManager = PersistenceManager(storage: UserDefaults.standard,
-                                                       encoder: JSONEncoder(),
-                                                       decoder: JSONDecoder(),
-                                                       key: Constants.starsKey)
-        self.lifecycleManager = AppLifecycleManager()
+  // MARK: Public
 
-        self.notificationManager = NotificationManager(notificationCenter: UNUserNotificationCenter.current())
-    }
+  // Singleton instance
+  public static let shared = StarrySky()
 
-    public func addStarInterface(to parentView: UIView) {
-        parentView.addSubview(starView)
-        starView.anchorToSuperview()
-    }
+  public func addStarInterface(to parentView: UIView) {
+    parentView.addSubview(starView)
+    starView.anchorToSuperview()
+  }
 
-    public func requestNotificationPermission() {
-        notificationManager.requestNotificationPermission()
-    }
+  public func requestNotificationPermission() {
+    notificationManager.requestNotificationPermission()
+  }
+
+  // MARK: Private
+
+  private let persistenceManager: PersistenceManaging
+  private let lifecycleManager: AppLifecycleManaging
+  private let notificationManager: NotificationManaging
+
+  private lazy var starView = StarView(skyManager: SkyManager(
+    persistenceManager: persistenceManager,
+    lifecycleManager: lifecycleManager,
+    notificationManager: notificationManager))
+
 }

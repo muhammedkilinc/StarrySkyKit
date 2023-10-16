@@ -8,6 +8,6 @@
 @testable import StarrySkyKit
 
 class MockAppLifecycleManager: AppLifecycleManaging {
-    var didEnterBackground: (() -> Void)?
-    var willTerminate: (() -> Void)?
+  var didEnterBackground: (() -> Void)?
+  var willTerminate: (() -> Void)?
 }

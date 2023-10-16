@@ -7,39 +7,55 @@
 
 import UIKit
 
+// MARK: - AppLifecycleManaging
+
 protocol AppLifecycleManaging {
-    var didEnterBackground: (() -> Void)? { get set }
-    var willTerminate: (() -> Void)? { get set }
+  var didEnterBackground: (() -> Void)? { get set }
+  var willTerminate: (() -> Void)? { get set }
 }
+
+// MARK: - AppLifecycleManager
 
 final class AppLifecycleManager {
 
-    var didEnterBackground: (() -> Void)?
-    var willTerminate: (() -> Void)?
+  // MARK: Lifecycle
 
-    init() {
-        setupNotifications()
-    }
+  init() {
+    setupNotifications()
+  }
 
-    private func setupNotifications() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(handleAppDidEnterBackground),
-                                               name: UIApplication.didEnterBackgroundNotification,
-                                               object: nil)
+  // MARK: Internal
 
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(handleAppWillTerminate),
-                                               name: UIApplication.didBecomeActiveNotification,
-                                               object: nil)
-    }
+  var didEnterBackground: (() -> Void)?
+  var willTerminate: (() -> Void)?
 
-    @objc private func handleAppDidEnterBackground() {
-        didEnterBackground?()
-    }
+  // MARK: Private
 
-    @objc private func handleAppWillTerminate() {
-        willTerminate?()
-    }
+  private func setupNotifications() {
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(handleAppDidEnterBackground),
+      name: UIApplication.didEnterBackgroundNotification,
+      object: nil)
+
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(handleAppWillTerminate),
+      name: UIApplication.didBecomeActiveNotification,
+      object: nil)
+  }
+
+  @objc
+  private func handleAppDidEnterBackground() {
+    didEnterBackground?()
+  }
+
+  @objc
+  private func handleAppWillTerminate() {
+    willTerminate?()
+  }
 }
 
-extension AppLifecycleManager: AppLifecycleManaging {}
+// MARK: AppLifecycleManaging
+
+extension AppLifecycleManager: AppLifecycleManaging { }
