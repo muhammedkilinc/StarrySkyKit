@@ -93,7 +93,7 @@
 			children = (
 				A49B183C2ADDD636000103B2 /* StarrySkyKit.h */,
 				A49B18532ADDD652000103B2 /* StarrySky.swift */,
-				A4A3B1C52ADDEFB5006CE226 /* Constants.swift */,
+				A4A3B1C72ADDF1C7006CE226 /* Constants */,
 				A4A3B1B72ADDE18C006CE226 /* Extension */,
 				A49B185A2ADDD74C000103B2 /* Model */,
 				A49B18552ADDD6B4000103B2 /* View */,
@@ -137,6 +137,14 @@
 				A4A3B1BD2ADDE889006CE226 /* UIViewExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		A4A3B1C72ADDF1C7006CE226 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				A4A3B1C52ADDEFB5006CE226 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
