@@ -29,7 +29,7 @@ final class NotificationManager: NotificationManaging {
 
   // MARK: Internal
 
-  let notificationCenter: UNUserNotificationCenter
+  private let notificationCenter: UNUserNotificationCenter
 
 
   func requestNotificationPermission() {

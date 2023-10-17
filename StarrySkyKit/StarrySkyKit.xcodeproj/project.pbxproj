@@ -131,9 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				A49B18582ADDD729000103B2 /* Star.swift */,
-				A49B185B2ADDD99D000103B2 /* SkyManager.swift */,
-				A4A3B1BF2ADDEC42006CE226 /* PersistenceManager.swift */,
-				A4A3B1C12ADDEDC5006CE226 /* AppLifecycleManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,6 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				A4A3B1EF2ADDFC46006CE226 /* NotificationManager.swift */,
+				A49B185B2ADDD99D000103B2 /* SkyManager.swift */,
+				A4A3B1BF2ADDEC42006CE226 /* PersistenceManager.swift */,
+				A4A3B1C12ADDEDC5006CE226 /* AppLifecycleManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
