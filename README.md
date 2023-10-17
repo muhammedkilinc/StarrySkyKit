@@ -13,6 +13,12 @@ Reset Sky: Clear all stars with just one tap.
 Persistency: Stars remain in the sky even if you close the app. They're only gone when you wish them away!
 Notifications: Get a reminder about the number of stars in your sky when you're not looking.
 
+##🛠 Requirements
+
+Xcode: StarrySky requires the latest version of Xcode.
+Swift: Written in Swift, version 5.0 or newer.
+Deployment Target: StarrySky is designed for iOS 15 and newer.
+
 ##📲 Installation
 
 #### Direct Integration
