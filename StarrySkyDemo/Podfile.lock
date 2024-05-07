@@ -1,0 +1,16 @@
+PODS:
+  - StarrySkyKit (0.0.1)
+
+DEPENDENCIES:
+  - StarrySkyKit (from `./../StarrySkyKit`)
+
+EXTERNAL SOURCES:
+  StarrySkyKit:
+    :path: "./../StarrySkyKit"
+
+SPEC CHECKSUMS:
+  StarrySkyKit: 83704a72cc7a4359804f92387c20ce693842593a
+
+PODFILE CHECKSUM: 5f693ccd4451e92fe039ce9acc53701a7848bc7d
+
+COCOAPODS: 1.13.0
